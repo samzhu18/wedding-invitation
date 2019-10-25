@@ -345,7 +345,7 @@
         <ul class="slides">
             <li>
                 <!-- SLIDE IMAGE -->
-                <div data-stellar-ratio="0.5" class="slide-image" style="background-image:url(images/slide-image-1920-1-d.jpg);">
+                <div id="slide01" data-stellar-ratio="0.5" class="slide-image" style="background-image:url(images/slide-image-1920-1-d.jpg);">
                 </div>
                 <!-- SLIDE OVERLAY -->
                 <div class="slide-overlay" style="opacity:0.2"></div>
@@ -880,7 +880,9 @@
 
 <script>
     $(function () {
-
+        if(isMobile()){
+            $("#slide01").css("background-image", "url('images/slide-image-1920-1.jpg')");
+        }
     });
 
     $('#countdown').countdown({until: new Date(2019, 11 - 1, 23)});
