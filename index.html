@@ -266,7 +266,7 @@
         <ul class="slides">
             <li>
                 <!-- SLIDE IMAGE -->
-                <div id="slide01" data-stellar-ratio="0.5" class="slide-image" style="background-image:url(images/slide-image-1920-1-d.jpg);">
+                <div id="slide01" data-stellar-ratio="0.5" class="slide-image" style="background-image:url(images/slide-image-1920-mobile.jpg);">
                 </div>
                 <!-- SLIDE OVERLAY -->
                 <div class="slide-overlay" style="opacity:0.2"></div>
@@ -465,7 +465,7 @@
                                 <span class="white-line"></span>
                             </div>
 
-                            <div id="countdown" class="simple-countdown animation fadeInUp" style="width: 60%"></div>
+                            <div id="countdown" class="simple-countdown animation fadeInUp" style="width: 40%"></div>
                             <div class="heart-divider animation fadeInUp">
                                 <a href="https://www.google.com/calendar/event?action=TEMPLATE&text=朱尚禮與陳玉敏的婚禮&dates=20191123T175800/20191123T220000&details=朱尚禮與陳玉敏將於2019年11月23日晚上5時58分在新莊典華舉行婚禮，地址：新北市新莊區中央路469號，期待您的到來&location=新莊典華, 242台灣新北市新莊區中央路469號&trp=false"
                                    class="de-button medium animation fadeInUp">加入 Google 行事曆</a>
@@ -533,17 +533,17 @@
                             <div class="row">
                                 <div class="wedding-item col-md-4 animation fadeIn">
                                     <a href="images/IMG_6877.jpg" class="glightbox2">
-                                        <img src="images/IMG_6877_sq.jpg" alt="image">
+                                        <img src="images/IMG_6877_sq.jpg">
                                     </a>
                                 </div>
                                 <div class="wedding-item col-md-4 animation fadeIn">
                                     <a href="images/IMG_7018.jpg" class="glightbox2">
-                                        <img src="images/IMG_7018_sq.jpg" alt="image">
+                                        <img src="images/IMG_7018_sq.jpg">
                                     </a>
                                 </div>
                                 <div class="wedding-item col-md-4 animation fadeIn">
                                     <a href="images/IMG_7165.jpg" class="glightbox2">
-                                        <img src="images/IMG_7165_sq.jpg" alt="image">
+                                        <img src="images/IMG_7165_sq.jpg">
                                     </a>
                                 </div>
                             </div>
@@ -738,7 +738,7 @@
 
     <!-- FOOTER SECTION -->
     <footer>
-        <div class="image-divider fixed-height" style="background-image:url(images/slide-image-1920-end.jpg);" data-stellar-background-ratio="0.5">
+        <div id="section-end" class="image-divider fixed-height" style="background-image:url(images/slide-image-1920-end-mobile.jpg);" data-stellar-background-ratio="0.5">
 
             <div class="divider-overlay"></div>
 
@@ -826,14 +826,15 @@
 <!-- Custom Additional Script -->
 <script type="text/javascript" src="js/main-slider-fade.js"></script>
 <script type="text/javascript" src="js/side-navbar.js"></script>
-<script type="text/javascript" src="js/mini-lightbox.min.js"></script>
-
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
 <script>
     $(function () {
-        if (isMobile()) {
-            $("#slide01").css("background-image", "url('images/slide-image-1920-1.jpg')");
+        if (!isMobile()) {
+            $("#slide01").css("background-image", "url('images/slide-image-1920-desktop.jpg')");
+            $("#countdown").css("width", "60%");
+            $("#section-end").css("background-image", "url('images/slide-image-1920-end-desktop.jpg')");
+
         }
         ;
 
@@ -842,9 +843,6 @@
     $('#countdown').countdown({until: new Date(2019, 11 - 1, 23, 17, 58, 00)});
     var lightboxDescription = GLightbox({
         selector: 'glightbox2',
-    });
-    new MiniLightbox({
-        selector: "img"
     });
 
     function isMobile() {
